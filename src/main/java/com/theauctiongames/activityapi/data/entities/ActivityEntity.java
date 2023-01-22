@@ -21,7 +21,7 @@ public class ActivityEntity {
      * @param model the activity model
      * @return the activity model
      */
-    public static ActivityEntity fromEntity(ActivityModel model) {
+    public static ActivityEntity fromModel(ActivityModel model) {
         return new ActivityEntity(
                 model.getId(),
                 model.getUserId(),
