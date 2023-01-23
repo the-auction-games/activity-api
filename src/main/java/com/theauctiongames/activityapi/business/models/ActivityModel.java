@@ -25,8 +25,8 @@ public class ActivityModel {
         return new ActivityModel(
                 entity.getId(),
                 entity.getUserId(),
-                entity.getActivityType(),
-                entity.getActivityDescription(),
+                entity.getType(),
+                entity.getDescription(),
                 entity.getUrlRedirect(),
                 entity.getTimestamp()
         );
@@ -45,12 +45,12 @@ public class ActivityModel {
     /**
      * The activity's type.
      */
-    private String activityType;
+    private String type;
 
     /**
      * The activity's description.
      */
-    private String activityDescription;
+    private String description;
 
     /**
      * The redirect url to the activity.

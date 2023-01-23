@@ -25,8 +25,8 @@ public class ActivityEntity {
         return new ActivityEntity(
                 model.getId(),
                 model.getUserId(),
-                model.getActivityType(),
-                model.getActivityDescription(),
+                model.getType(),
+                model.getDescription(),
                 model.getUrlRedirect(),
                 model.getTimestamp()
         );
@@ -45,12 +45,12 @@ public class ActivityEntity {
     /**
      * The activity's type.
      */
-    private String activityType;
+    private String type;
 
     /**
      * The activity's description.
      */
-    private String activityDescription;
+    private String description;
 
     /**
      * The redirect url to the activity.
