@@ -57,7 +57,7 @@ public class ActivityRestController {
      * @param limit  the max number of activities to retrieve
      * @return a list of activities
      */
-    @GetMapping(path = "/activity/{userId}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path = "/activity/user/{userId}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getActivityByUserId(
             @PathVariable String userId,
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit) {
@@ -87,8 +87,8 @@ public class ActivityRestController {
                 // Return success
                 return new ResponseEntity<>(HttpStatus.CREATED);
             } else {
-                // Return internal error
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                // Return conflict
+                return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         } catch (Exception exception) {
             // Output error

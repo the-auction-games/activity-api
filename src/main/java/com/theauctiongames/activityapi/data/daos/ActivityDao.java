@@ -1,8 +1,10 @@
 package com.theauctiongames.activityapi.data.daos;
 
+import com.theauctiongames.activityapi.business.models.ActivityModel;
 import com.theauctiongames.activityapi.data.entities.ActivityEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The DAO object for activity manipulation.
@@ -25,6 +27,14 @@ public interface ActivityDao {
      * @return a list of activities
      */
     List<ActivityEntity> getActivityByUserId(String userId, int limit);
+
+    /**
+     * Get an activity by id.
+     *
+     * @param id the id
+     * @return the optional activity
+     */
+    Optional<ActivityEntity> getActivityById(String id);
 
     /**
      * Create an activity.
