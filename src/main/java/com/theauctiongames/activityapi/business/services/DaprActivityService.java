@@ -18,15 +18,15 @@ public class DaprActivityService implements ActivityService {
     /**
      * The injected activity DAO.
      */
-    private final ActivityDao dao;
+    private final ActivityDao activityDao;
 
     /**
      * Construct the dapr activity service.
      *
-     * @param dao the activity DAO
+     * @param activityDao the activity DAO
      */
-    public DaprActivityService(ActivityDao dao) {
-        this.dao = dao;
+    public DaprActivityService(ActivityDao activityDao) {
+        this.activityDao = activityDao;
     }
 
     /**
@@ -37,7 +37,7 @@ public class DaprActivityService implements ActivityService {
      */
     @Override
     public List<ActivityModel> getActivity(int limit) {
-        return this.dao.getActivity(limit).stream()
+        return this.activityDao.getActivity(limit).stream()
                 .map(ActivityModel::fromEntity)
                 .collect(Collectors.toList());
     }
@@ -51,7 +51,7 @@ public class DaprActivityService implements ActivityService {
      */
     @Override
     public List<ActivityModel> getActivityByUserId(String userId, int limit) {
-        return this.dao.getActivityByUserId(userId, limit).stream()
+        return this.activityDao.getActivityByUserId(userId, limit).stream()
                 .map(ActivityModel::fromEntity)
                 .collect(Collectors.toList());
     }
@@ -64,6 +64,6 @@ public class DaprActivityService implements ActivityService {
      */
     @Override
     public boolean createActivity(ActivityModel activity) {
-        return this.dao.createActivity(ActivityEntity.fromModel(activity));
+        return this.activityDao.createActivity(ActivityEntity.fromModel(activity));
     }
 }

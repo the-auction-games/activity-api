@@ -1,6 +1,5 @@
 package com.theauctiongames.activityapi.business.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theauctiongames.activityapi.business.models.ActivityModel;
 import com.theauctiongames.activityapi.business.services.ActivityService;
 import org.springframework.http.HttpStatus;
@@ -80,7 +79,7 @@ public class ActivityRestController {
      * @return the created activity
      */
     @PostMapping(path = "/activity", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> postActivity(@RequestBody ActivityModel activity) {
+    public ResponseEntity<?> createActivity(@RequestBody ActivityModel activity) {
         try {
             // Create the activity
             if (this.service.createActivity(activity)) {
