@@ -1,7 +1,6 @@
 package com.theauctiongames.activityapi.data.daos;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.theauctiongames.activityapi.business.models.ActivityModel;
 import com.theauctiongames.activityapi.data.entities.ActivityEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -102,7 +101,7 @@ public class DaprActivityDao implements ActivityDao {
             // Parse the response
             List<ActivityEntity> activities = Arrays.stream(daprResponse.getBody().results)
                     .map(ResponseEntry::getData)
-                    .sorted(Comparator.comparing(ActivityEntity::getTimestamp).reversed())
+                    .sorted(Comparator.comparing(ActivityEntity::getCreationTimestamp).reversed())
                     .limit(limit)
                     .collect(Collectors.toList());
 
@@ -146,7 +145,7 @@ public class DaprActivityDao implements ActivityDao {
             List<ActivityEntity> activities = Arrays.stream(daprResponse.getBody().results)
                     .map(ResponseEntry::getData)
                     .filter(activity -> activity.getUserId().equals(userId))
-                    .sorted(Comparator.comparing(ActivityEntity::getTimestamp).reversed())
+                    .sorted(Comparator.comparing(ActivityEntity::getCreationTimestamp).reversed())
                     .limit(limit)
                     .collect(Collectors.toList());
 

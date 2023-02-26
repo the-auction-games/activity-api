@@ -28,7 +28,7 @@ public class ActivityEntity {
                 model.getType(),
                 model.getDescription(),
                 model.getUrlRedirect(),
-                model.getTimestamp()
+                model.getCreationTimestamp()
         );
     }
 
@@ -60,5 +60,5 @@ public class ActivityEntity {
     /**
      * The activity's timestamp.
      */
-    private long timestamp;
+    private long creationTimestamp;
 }

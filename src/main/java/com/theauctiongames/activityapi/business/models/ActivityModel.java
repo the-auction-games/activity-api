@@ -28,7 +28,7 @@ public class ActivityModel {
                 entity.getType(),
                 entity.getDescription(),
                 entity.getUrlRedirect(),
-                entity.getTimestamp()
+                entity.getCreationTimestamp()
         );
     }
 
@@ -60,5 +60,5 @@ public class ActivityModel {
     /**
      * The activity's timestamp.
      */
-    private long timestamp;
+    private long creationTimestamp;
 }
