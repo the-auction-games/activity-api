@@ -5,7 +5,7 @@ This is the Activity API for The Auction Games. It provides functionality for cr
 The project is structured as follows:
 ```
 .
-├── src/main/java/com/theauctionhouse/activityapi/      'Source files'
+├── src/main/java/com/theauctiongames/activityapi/      'Source files'
 │   ├── business/                                       'Business logic'                           
 │   │   ├── controllers/                                'Business Controllers'
 │   │   ├── models/                                     'Business Models'
